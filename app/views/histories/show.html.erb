@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Task:</b>
+  <%= @history.task_id %>
+</p>
+
+<p>
+  <b>Isdeleted:</b>
+  <%= @history.isDeleted %>
+</p>
+
+<p>
+  <b>Isdone:</b>
+  <%= @history.isDone %>
+</p>
+
+
+<%= link_to 'Edit', edit_history_path(@history) %> |
+<%= link_to 'Back', histories_path %>

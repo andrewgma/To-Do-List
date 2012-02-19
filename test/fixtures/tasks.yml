@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  task_id: 1
+  task_name: MyString
+  description: MyText
+  due_date: 2012-02-19 16:55:01
+  priority: 1
+
+two:
+  email: MyString
+  task_id: 1
+  task_name: MyString
+  description: MyText
+  due_date: 2012-02-19 16:55:01
+  priority: 1
