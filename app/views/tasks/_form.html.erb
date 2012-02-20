@@ -11,29 +11,30 @@
     </div>
   <% end %>
 
+<div class="container">
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %><br>
     <%= link_to "Create new user", new_user_path %>
   </div>
   <div class="field">
-    <%= f.label :task_id %><br />
+    <%= f.label :task_id %>
     <%= f.number_field :task_id %>
   </div>
   <div class="field">
-    <%= f.label :task_name %><br />
+    <%= f.label :task_name %>
     <%= f.text_field :task_name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.label :description %>
+    <%= f.text_area :description, :rows=>4 %>
   </div>
   <div class="field">
-    <%= f.label :due_date %><br />
-    <%= f.datetime_select :due_date %>
+    <%= f.label :due_date %>
+    <%= f.datetime_select :due_date, :default=> {:minute=>0} %>
   </div>
   <div class="field">
-    <%= f.label :priority %><br />
+    <%= f.label :priority %>
     <%= f.radio_button :priority, 1 %>
     <%= f.label :priority_high, "High" %>
     <%= f.radio_button :priority, 2, :checked => true %>
@@ -42,6 +43,7 @@
     <%= f.label :priority_low, "Low"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=> "btn btn-primary" %>
   </div>
+</div>
 <% end %>
