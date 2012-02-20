@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><br>
+    <%= link_to "Create new user", new_user_path %>
   </div>
   <div class="field">
     <%= f.label :task_id %><br />
@@ -33,7 +34,12 @@
   </div>
   <div class="field">
     <%= f.label :priority %><br />
-    <%= f.number_field :priority %>
+    <%= f.radio_button :priority, 1 %>
+    <%= f.label :priority_high, "High" %>
+    <%= f.radio_button :priority, 2, :checked => true %>
+    <%= f.label :priority_med, "Med" %>
+    <%= f.radio_button :priority, 3 %>
+    <%= f.label :priority_low, "Low"  %>
   </div>
   <div class="actions">
     <%= f.submit %>
