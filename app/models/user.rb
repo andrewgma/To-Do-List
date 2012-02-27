@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
     :uniqueness => true, 
     :length => { :minimum => 6 }, 
   :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, 
-    :message => "Invalid email" }
+    :message => "invalid" }
   validates :name, :presence => true
   # , 
   #   :format => { :with => /\A([[:alnum:]]+[a-zA-Z]*)/, 
