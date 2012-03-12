@@ -1,32 +1,31 @@
-<%= form_for(@history) do |f| %>
-  <% if @history.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@history.errors.count, "error") %> prohibited this history from being saved:</h2>
+<%= form_for @history, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> History</legend>
 
-      <ul>
-      <% @history.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div class="control-group">
+      <%= f.label :task_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :task_id, :class => 'number_field' %>
+      </div>
     </div>
-  <% end %>
 
-<div class="container">
-  <div class="field">
-    <%= f.label :task_id %>
-    <%= f.number_field :task_id %><br>
-    <%= link_to "Create new task", new_task_path %>
-  </div>
-  <div class="field">
-    <%= f.label :isDeleted %>
-    <%= f.check_box :isDeleted %>
-  </div>
-  <div class="field">
-    <%= f.label :isDone %>
-    <%= f.check_box :isDone %>
-  </div>
-  <div class="actions">
-    <%= f.submit :class=> "btn btn-primary" %>
-  </div>
-</div>
+    <div class="control-group">
+      <%= f.label :isDeleted, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :isDeleted, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :isDone, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :isDone, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', histories_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>

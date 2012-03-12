@@ -1,27 +1,26 @@
-<h1>Listing histories</h1>
-
-<table>
-  <tr>
-    <th>Task</th>
-    <th>Isdeleted</th>
-    <th>Isdone</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @histories.each do |history| %>
-  <tr>
-    <td><%= history.task_id %></td>
-    <td><%= history.isDeleted %></td>
-    <td><%= history.isDone %></td>
-    <td><%= link_to 'Show', history %></td>
-    <td><%= link_to 'Edit', edit_history_path(history) %></td>
-    <td><%= link_to 'Destroy', history, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Historys</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Task</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @histories.each do |history| %>
+      <tr>
+        <td><%= history.id %></td>
+        <td><%= link_to history.task_id, history_path(history) %></td>
+        <td><%= history.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_history_path(history), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', history_path(history), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New History', new_history_path %>
+<%= link_to 'New', new_history_path, :class => 'btn btn-primary' %>
