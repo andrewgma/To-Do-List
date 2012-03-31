@@ -44,6 +44,20 @@
       </div>
     </div>
 
+    <div class="control-group">
+      <%= f.label :isDeleted, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :isDeleted, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :isDone, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :isDone, :class => 'check_box' %>
+      </div>
+    </div>
+
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to 'Cancel', tasks_path, :class => 'btn' %>
