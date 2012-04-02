@@ -13,7 +13,7 @@
 	</thead>
 <tbody>
 <% @tasks.each do |task| %>
-<% if task.isDeleted == true or task.isDone == true %>
+<% if task.isDeleted == true or task.isDone == true and current_user.email == task.email %>
 	<tr>
 		<td><%= check_box("task", "done") %></td>
 		<td><%= task.task_name %></td>

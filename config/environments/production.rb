@@ -60,7 +60,7 @@ Todos::Application.configure do
       :domain           => 'heroku.com'
     }
     
-    config.action_mailer.default_url_options = { :host => "getshitdone.herokuapp.com" }
+    config.action_mailer.default_url_options = { :host => 'getshitdone.herokuapp.com' }
     
   # Enable threaded mode
   # config.threadsafe!
