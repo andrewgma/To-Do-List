@@ -4,7 +4,4 @@ class FrontController < ApplicationController
   def index
   	@tasks = Task.order(:due_date)
   end
-  def deleteTask task
-  	task.update_attribute(:isDeleted, true)
-  end
 end

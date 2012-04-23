@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Email</th>
+      <th>Task name</th>
       <th>Created at</th>
       <th>Actions</th>
     </tr>
@@ -12,7 +12,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.id %></td>
-        <td><%= link_to task.email, task_path(task) %></td>
+        <td><%= link_to task.task_name, task_path(task) %></td>
         <td><%= task.created_at %></td>
         <td>
           <%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-mini' %>
