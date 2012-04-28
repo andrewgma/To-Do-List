@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.order(:due_date)
 
     respond_to do |format|
       format.html # index.html.erb

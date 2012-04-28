@@ -2,21 +2,23 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Task name</th>
-      <th>Created at</th>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Day Due</th>
+      <th>Time Due</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.id %></td>
-        <td><%= link_to task.task_name, task_path(task) %></td>
-        <td><%= task.created_at %></td>
+        <td><%= task.task_name %></td>
+        <td><%= task.description %></td>
+        <td><%= task.due_date.strftime("%-m/%-d") %></td>
+        <td><%= task.due_date.strftime("%l:%M %P") %></td>
         <td>
           <%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-mini' %>
-          <%= link_to 'Destroy', task_path(task), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to 'Delete', task_path(task), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
