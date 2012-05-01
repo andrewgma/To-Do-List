@@ -7,11 +7,9 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3'
 
-# gem 'less-rails-bootstrap'
-
 gem 'devise'
 
-gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'bootstrap-sass', '2.0.2'
 
 # Gems used only for assets and not required
 # in production environments by default.

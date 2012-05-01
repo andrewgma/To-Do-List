@@ -5,7 +5,7 @@ Todos::Application.routes.draw do
 
   get "front/index"
 
-  resources :tasks
+  resources :tasks, :collection => { :complete => :put }
 
   resources :users
 

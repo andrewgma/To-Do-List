@@ -16,8 +16,6 @@ ActiveRecord::Schema.define(:version => 20120425183022) do
     t.string   "task_name"
     t.text     "description"
     t.datetime "due_date"
-    t.integer  "priority"
-    t.boolean  "isDeleted"
     t.boolean  "isDone"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
