@@ -15,11 +15,6 @@
   <%= @task.due_date %>
 </p>
 
-<p>
-  <b>Isdone</b><br>
-  <%= @task.isDone %>
-</p>
-
 <div class="form-actions">
   <%= link_to 'Back', tasks_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_task_path(@task), :class => 'btn' %>

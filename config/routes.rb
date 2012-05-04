@@ -1,11 +1,9 @@
 Todos::Application.routes.draw do
   devise_for :users
 
-  get "trash/index"
-
-  get "front/index"
-
   resources :tasks, :collection => { :complete => :put }
+
+  resources :lists, :collection => { :complete => :put }
 
   resources :users
 
