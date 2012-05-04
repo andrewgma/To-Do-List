@@ -18,6 +18,20 @@ textarea {
   resize: vertical;
 }
 
+.table tbody tr.bs td {
+  background-color: #FF3D3D;
+  color: #FCFFE0;
+}
+
+.table tbody tr:hover td {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+select {
+  width: 97px;
+}
+
 .center {
   text-align: center;
 }
@@ -40,6 +54,7 @@ footer a {
 }  
 
 footer a:hover { 
+  background-color: #A4D5FC;
   color: #222;
 }
 

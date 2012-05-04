@@ -19,15 +19,7 @@
     <div class="control-group">
       <%= f.label :due_date, :class => 'control-label' %>
       <div class="controls">
-        <%= f.datetime_select :due_date, :class => 'datetime_select' %>
-      </div>
-    </div>
-
-    <!-- comment this out after checkbox is implemented -->
-    <div class="control-group">
-      <%= f.label :isDone, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.check_box :isDone, :class => 'check_box' %>
+        <%= f.datetime_select :due_date, :class => 'datetime_select', :default => 1.days.from_now, :ampm => true %>
       </div>
     </div>
 

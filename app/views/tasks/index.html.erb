@@ -2,34 +2,39 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th style="width: 10%">Done?</th>
-      <th style="width: 20%">Task</th>
+      <th style="width: 4%">Done?</th>
+      <th style="width: 26%">Task</th>
       <th style="width: 40%">Description</th>
-      <th style="width: 10%">Day Due</th>
+      <th style="width: 8%">Day Due</th>
       <th style="width: 10%">Time Due</th>
-      <th style="width: 10%">Actions</th>
+      <th style="width: 12%">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @tasks.each do |task| %>
       <% if !task.isDone %>
-        <tr>
-          <td><%= check_box_tag "task_id", task.id, false, :class => 'task-checkbox' %></td>
-
-
-
+        <% if task.due_date < Time.now %>
+          <tr class="bs">
+        <% else %>
+          <tr>
+        <% end %>        
+          <td><center><%= link_to "✓", task_path(task), :method => :delete, :class => 'btn btn-mini btn-inverse' %> </center></td>
           <td><%= task.task_name %></td>
           <td><%= task.description %></td>
           <td><%= task.due_date.strftime("%-m/%-d") %></td>
           <td><%= task.due_date.strftime("%l:%M %P") %></td>
           <td>
             <%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-mini' %>
-            <%= link_to 'Delete', task_path(task), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
 
+        <% if task.due_date < Time.now %>       
+            <%= link_to 'Delete', task_path(task), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-warning' %>   
+        <% else %>         
+            <%= link_to 'Delete', task_path(task), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        <% end %>
           </td>
         </tr>
+        <% end %>
       <% end %>
-    <% end %>
   </tbody>
 </table>
 

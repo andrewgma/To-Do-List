@@ -15,8 +15,5 @@ class User < ActiveRecord::Base
   :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, 
     :message => "invalid" }
   validates :name, :presence => true
-  # , 
-  #   :format => { :with => /\A([[:alnum:]]+[a-zA-Z]*)/, 
-  #   :message => "Invalid username" }
   validates :password, :presence => true
 end
