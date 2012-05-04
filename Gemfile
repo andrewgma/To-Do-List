@@ -8,6 +8,7 @@ gem 'rails', '3.2.1'
 gem 'sqlite3'
 
 gem 'devise'
+gem 'bcrypt-ruby'
 
 gem 'bootstrap-sass', '2.0.2'
 
