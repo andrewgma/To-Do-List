@@ -14,7 +14,10 @@
     <% @tasks.each do |task| %>
       <% if !task.isDone %>
         <tr>
-          <td><%= check_box_tag "task_id", task.id %></td>
+          <td><%= check_box_tag "task_id", task.id, false, :class => 'task-checkbox' %></td>
+
+
+
           <td><%= task.task_name %></td>
           <td><%= task.description %></td>
           <td><%= task.due_date.strftime("%-m/%-d") %></td>
@@ -22,6 +25,9 @@
           <td>
             <%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-mini' %>
             <%= link_to 'Delete', task_path(task), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+
+            <%= button_to 'Done', :action => :done, :remote=>true %>
+
           </td>
         </tr>
       <% end %>
