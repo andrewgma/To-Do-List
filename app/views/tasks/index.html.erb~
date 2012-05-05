@@ -1,6 +1,10 @@
-<h1><%= @list.name %></h1>
+<h1>Shit you need to get done.</h1>
 
-<table class="table table-striped">
+
+  <% @lists.each do |list| %>
+    <table class="table table-striped">
+    <h3><%= list.name %></h3>
+
     <thead>
       <tr>
         <th style="width: 4%">Done?</th>
@@ -12,14 +16,14 @@
       </tr>
     </thead>
     <tbody>
-      <% @list.tasks.each do |task| %>
+      <% list.tasks.each do |task| %>
           <% if task.due_date < Time.now %>
             <tr class="bs">
           <% else %>
             <tr>
           <% end %>        
           <td><center><%= link_to "✓", task_path(task), :method => :delete, :class => 'btn btn-mini btn-inverse' %> </center></td>
-          <td><%= link_to task.task_name, task_path(task) %></td>
+          <td><%= task.task_name %></td>
           <td><%= task.description %></td>
           <td><%= task.due_date.strftime("%-m/%-d") %></td>
           <td><%= task.due_date.strftime("%l:%M %P") %></td>
@@ -35,10 +39,7 @@
           </tr>
     </tbody>
   <% end %>
+<% end %>
 </table>
 
-<div class="form-actions">
-  <%= link_to 'Back', lists_path, :class => 'btn'  %>
-  <%= link_to 'Edit', edit_list_path(@list), :class => 'btn' %>
-  <%= link_to 'Delete', list_path(@list), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
-</div>
+<%= link_to 'New', new_task_path, :class => 'btn' %>
