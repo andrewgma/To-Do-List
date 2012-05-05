@@ -2,20 +2,23 @@ require 'test_helper'
 
 class NewListTest < ActionDispatch::IntegrationTest
 
-  def testSuccess
-    visit lists_path
-    click_link "New List"
-    fill_in "Name", with: "hooray"
-    click_button "Create List"
+  test "listTest1" do
+    visit '/lists'
+    click_link "New"
+    fill_in 'list_name', with: 'hooray'
+    click_button 'Create List'
+    
+    assert page.has_content?('List')
 
-    assert page.has_content?('hooray')
+    # assert page.has_content?('hooray')
   end
 
-  def testFail
-    visit lists_path
-    click_link "New List"
-    fill_in "Name", with: ""
-    click_button "Create List"
+  test "listTest2" do
+    visit list_path
+    assert page.has_content?('Lists')
+    click_link "New"
+    fill_in 'list_name', with: ''
+    click_button 'Create List'
 
     assert page.has_content?('Create list')
     end

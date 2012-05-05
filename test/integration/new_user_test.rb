@@ -1,5 +1,8 @@
 require 'test_helper'
 
+### User tests are no longer necessary because ###
+### user creation is handled by devise         ###
+
 class NewUserTest < ActionDispatch::IntegrationTest
   # def test1
   #   visit users_path
