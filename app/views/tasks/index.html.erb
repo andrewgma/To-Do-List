@@ -14,7 +14,9 @@
 
 <h1>Shit you need to get done.</h1>
 
-
+<% if @lists.size < 1 %>
+<h3> Welcome! To get started, create a new list. </h3>
+<% else %>
   <% @lists.each do |list| %>
     <table class="table table-striped">
     <h3><%= list.name %></h3>
@@ -56,6 +58,5 @@
     </tbody>
   <% end %>
 <% end %>
+<% end %>
 </table>
-
-<%= link_to 'New', new_task_path, :class => 'btn' %>
