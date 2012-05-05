@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  protect_from_forgery
   before_filter :authenticate_user!
 	# GET /lists
   # GET /lists.json
@@ -41,7 +42,7 @@ class ListsController < ApplicationController
   # POST /lists
   # POST /lists.json
   def create
-    @list = List.new(params[:list])
+    @list = current_user.lists.build(params[:list])
 
     respond_to do |format|
       if @list.save

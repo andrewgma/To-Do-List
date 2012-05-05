@@ -1,11 +1,12 @@
 Todos::Application.routes.draw do
-  devise_for :users
+  devise_for :user
+  
+  resources :lists, :collection => { :complete => :put }
 
   resources :tasks, :collection => { :complete => :put }
 
-  resources :lists, :collection => { :complete => :put }
+  resources :user
 
-  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
