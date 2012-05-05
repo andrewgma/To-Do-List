@@ -30,7 +30,7 @@
       </tr>
     </thead>
     <tbody>
-      <% list.tasks.each do |task| %>
+      <% list.tasks.order(:due_date).each do |task| %>
         <% if !task.isDone %>
           <% if task.due_date < Time.now %>
             <tr class="bs">
