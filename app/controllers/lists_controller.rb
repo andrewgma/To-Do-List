@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 	# GET /lists
   # GET /lists.json
   def index
-    @lists = List.all
+    @lists = current_user.lists
 
     respond_to do |format|
       format.html # index.html.erb
