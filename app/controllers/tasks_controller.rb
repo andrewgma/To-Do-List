@@ -38,6 +38,7 @@ class TasksController < ApplicationController
   # GET /tasks/1/edit
   def edit
     @task = Task.find(params[:id])
+    @lists = current_user.lists
   end
 
   # POST /tasks
