@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = current_user.tasks.order(:due_date)
+    @lists = current_user.lists
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,7 +28,7 @@ class TasksController < ApplicationController
   # GET /tasks/new.json
   def new
     @task = Task.new
-
+    @lists = current_user.lists
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @task }

@@ -1,9 +1,9 @@
 Todos::Application.routes.draw do
   devise_for :user
   
-  resources :lists, :collection => { :complete => :put }
+  resources :lists
 
-  resources :tasks, :collection => { :complete => :put }
+  resources :tasks
 
   resources :user
 

@@ -11,7 +11,6 @@ gem 'devise'
 gem 'bcrypt-ruby'
 
 gem 'bootstrap-sass', '2.0.2'
-gem 'sass'
 
 # Gems used only for assets and not required
 # in production environments by default.

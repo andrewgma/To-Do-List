@@ -1,5 +1,10 @@
 <h1>Shit you need to get done.</h1>
+
+
+    <% @lists.each do |list| %>
 <table class="table table-striped">
+  <h3><%= list.name %></h3>
+
   <thead>
     <tr>
       <th style="width: 4%">Done?</th>
@@ -11,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @tasks.each do |task| %>
+    <% list.tasks.each do |task| %>
       <% if !task.isDone %>
         <% if task.due_date < Time.now %>
           <tr class="bs">
@@ -34,8 +39,9 @@
           </td>
         </tr>
         <% end %>
-      <% end %>
-  </tbody>
+        </tbody>
+  <% end %>
+<% end %>
 </table>
 
 <%= link_to 'New', new_task_path, :class => 'btn' %>

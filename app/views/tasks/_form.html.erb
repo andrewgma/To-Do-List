@@ -24,9 +24,9 @@
     </div>
 
     <div class="control-group">
-      <%= f.label :list, :class => 'control-label' %>
+      <%= f.label :list_id, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :description, :rows => 5, :class => 'text_area' %>
+        <%= f.collection_select :list_id, @lists, :id, :name %>
       </div>
     </div>
 
