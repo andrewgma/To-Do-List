@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class ListTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def test
+  	attrs = {
+  		:name => "cheerio"
+  	}
+  	list = List.new(attrs)
+  	assert list.valid?
+  end
 end

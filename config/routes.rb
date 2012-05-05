@@ -5,7 +5,7 @@ Todos::Application.routes.draw do
 
   resources :tasks
 
-  resources :user
+  resources :users
 
 
   # The priority is based upon order of creation:
