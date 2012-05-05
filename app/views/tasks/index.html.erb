@@ -16,6 +16,9 @@
 
 <% if @lists.size < 1 %>
 <h3> Welcome! To get started, create a new list. </h3>
+
+<%= link_to 'New List', new_list_path, :class => 'btn' %>
+
 <% else %>
   <% @lists.each do |list| %>
     <table class="table table-striped">
@@ -33,7 +36,6 @@
     </thead>
     <tbody>
       <% list.tasks.order(:due_date).each do |task| %>
-        <% if !task.isDone %>
           <% if task.due_date < Time.now %>
             <tr class="bs">
           <% else %>
@@ -57,6 +59,5 @@
         <% end %>
     </tbody>
   <% end %>
-<% end %>
 <% end %>
 </table>
