@@ -17,7 +17,6 @@
     </thead>
     <tbody>
       <% list.tasks.each do |task| %>
-      <% if !task.isDone %>
           <% if task.due_date < Time.now %>
             <tr class="bs">
           <% else %>
@@ -38,7 +37,6 @@
           <% end %>
           </td>
           </tr>
-<% end %>
     </tbody>
   <% end %>
 <% end %>
